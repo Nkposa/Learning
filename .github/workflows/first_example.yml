@@ -3,14 +3,15 @@ name: My First Workflow
 on: push
 
 jobs:
-    first_job:
-        runs-on: ubuntu-latest
-        steps: 
-        - name: welcome
-          run: echo "welcome to github"
-          
-       # - name: thanks for starting
-       #   run: echo" started my learning"
-          
-       # - name: more to go
-       #   run: echo "chooskundhm inka"  
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: listing files
+        run: ls
+        
+      - name: viewing files
+        run: cat README.md  
+       
