@@ -10,7 +10,7 @@ jobs:
           run: echo "welcome to github"
           
         - name: thanks for starting
-          run:  echo" started my learning"
+          run: echo" started my learning"
           
         - name: more to go
           run: echo "chooskundhm inka"  
