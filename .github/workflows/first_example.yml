@@ -12,6 +12,6 @@ jobs:
       - name: listing files
         run: ls
         
-      - name: viewing files
+      - name: viewing files and modified
         run: cat README.md  
        
