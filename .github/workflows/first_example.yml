@@ -9,7 +9,7 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v4
 
-      - name: listing files
+      - name: listing files and modify
         run: ls
         
       - name: viewing files and modified
