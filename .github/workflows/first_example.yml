@@ -1,0 +1,17 @@
+name: My First workflow
+
+on: push
+
+jobs:
+    my_first_job:
+        runs_on: ubuntu-latest
+        steps:
+        - name: welcome to GitHub actions
+          run: echo "started preparation"
+          
+        - name: starting first workflow
+          run: echo "created a new workflow"
+         
+         
+        - name: testing my workflow
+          run: echo "vachesthundhi inka" 
