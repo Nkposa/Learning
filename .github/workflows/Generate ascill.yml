@@ -8,16 +8,9 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
-
-      - name: listing files and modify
-        run: |
-          echo "all my messages"
-          ls -al
-          cat README.md
-
-      - name: Executing shell script
-        run: ./script1.sh
-
-      - name: viewing dragon file
-        run: cat dragon.txt  
     
+      - name: list files
+        run: ls -la  
+      
+
+      
