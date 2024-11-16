@@ -1,0 +1,26 @@
+name: My First Workflow
+
+on: push
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: listing files and modify
+        run: |
+          echo "all my messages"
+          ls -al
+          cat README.md
+
+      - name: install and download cowsay
+        run: sudo apt-get install cowsay -y    
+        
+      - name: geneate ASCII
+        run: cowsay -f dragaon "run over...i am the dragon" >> dragon.txt
+
+      - name: view files
+        run: cat dragon.txt  
+       
