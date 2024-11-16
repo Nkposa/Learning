@@ -14,7 +14,8 @@ jobs:
           echo "all my messages"
           ls -al
           cat README.md
-      - name: download cowsay
+
+      - name: Install cowsay
         run: sudo apt-get install cowsay -y    
         
       - name: geneate ASCII
