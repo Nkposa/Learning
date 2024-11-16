@@ -32,7 +32,7 @@ jobs:
           
 
       - name: Checking the file exists
-        run: grep -i "dragon" kt
+        run: grep -i "dragon" dragon.txt
         
   third_job: 
     needs: second_job
