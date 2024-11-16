@@ -12,7 +12,10 @@ jobs:
         run: sudo apt-get install cowsay -y
 
       - name: execu cowsay
-        run: cowsay -f dragon "Hey am dragon" >> dragon.txt
+        run: cowsay -f dragon "Hey am dragon" >> kt
+
+      - name: view kt
+        run: cat kt  
         
         
   second_job:
@@ -23,7 +26,7 @@ jobs:
         run: sleep 10
 
       - name: Checking the file exists
-        run: grep -i "dragon" dragon.txt
+        run: grep -i "dragon" kt
         
   third_job: 
     needs: second_job
