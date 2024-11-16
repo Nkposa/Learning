@@ -1,0 +1,30 @@
+name: Test ascii
+
+on: push
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: listing files and modify
+        run: |
+          echo "all my messages"
+          ls -al
+          cat README.md
+
+      - name: generate ascill
+        run: sudo apt-get install cowsay -y
+        
+      - name: Generating ascill
+        run: cowsay -f dragon "runnn...am the dragon..." >> dragon.txt
+        
+      - name: viewing dragon
+        run: grep -i "dragon" dragon.txt
+        
+      - name: lisiting the file
+        run: cat dragon.txt  
+
+    
