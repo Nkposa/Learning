@@ -16,7 +16,7 @@ jobs:
           cat README.md
 
       - name: Executing shell script
-        run: ./ascil-script.sh
+        run: ./script.sh
 
       - name: viewing dragon file
         run: cat dragon.txt  
