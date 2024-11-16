@@ -16,7 +16,7 @@ jobs:
           cat README.md
 
       - name: Executing shell script
-        run: ./script.sh
+        run: ./script1.sh
 
       - name: viewing dragon file
         run: cat dragon.txt  
