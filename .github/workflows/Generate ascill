@@ -15,12 +15,4 @@ jobs:
           ls -al
           cat README.md
 
-      - name: install and download cowsay
-        run: sudo apt-get install cowsay -y    
-        
-      - name: geneate ASCII
-        run: cowsay -f dragaon "run over...i am the dragon" >> dragon.txt
-
-      - name: view files
-        run: cat dragon.txt  
-       
+    
