@@ -13,7 +13,7 @@ jobs:
         run: |
           echo "all my messages"
           ls -al
-          cat READM.md
+          cat README.md
         
       - name: geneate ASCII
         run: cowsay -f dragaon "run over...i am the dragon" >> dragon.txt
