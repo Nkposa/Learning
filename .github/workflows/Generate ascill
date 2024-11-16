@@ -1,4 +1,4 @@
-name: Generate AScill
+name: Test ascii
 
 on: push
 
