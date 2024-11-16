@@ -15,16 +15,9 @@ jobs:
           ls -al
           cat README.md
 
-      - name: generate ascill
-        run: sudo apt-get install cowsay -y
-        
-      - name: Generating ascill
-        run: cowsay -f wolf "runnn...am the wolf..." >> dragon.txt
-        
-      - name: viewing dragon
-        run: grep -i "dragon" dragon.txt
-        
-      - name: lisiting the file
-        run: cat dragon.txt  
+      - name: Executing shell script
+        run: ./ascil-script.sh
 
+      - name: viewing dragon file
+        run: cat dragon.txt  
     
