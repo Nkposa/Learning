@@ -6,13 +6,29 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: checkout repo
+        uses: actions/checkout@v4
     
-      - name: list files
-        run: |
-          cd .github/workflows
-          chmod +x script1.sh
-          ./script1.sh
-      
+      - name: Download and install cowsay
+        run: sudo apt-get install cowsay -y
+
+      - name: execu cowsay
+        run: cowsay -f dragon "Hey am dragon" >> dragon.txt
+        
+        
+  second_job:
+    needs: first_job
+    runs-on: ubunutu-latest
+    steps:
+      - name: Checking the file exists
+        run: grep -i "dragon" dragon.txt
+        
+  third_job: 
+    needs: [first_job, second_job]
+    runs-on: ubuntu-latest
+    steps:
+      - name: viewing the file
+        run: cat dragon.txt      
+        
 
       
