@@ -10,8 +10,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: listing files and modify
-        run: ls -al
+        run: |
+          echo "all my messages"
+          ls -al
+          cat READM.md
         
-      - name: viewing files and modified
-        run: cat README.md  
+      - name: geneate ASCII
+        run: cowsay -f dragaon "run over...i am the dragon" >> dragon.txt
        
