@@ -10,7 +10,7 @@ jobs:
     
       - name: list files
         run: |
-          cd .github
+          cd .github/workflows
           ls -latr
           cat  script1.sh
       
