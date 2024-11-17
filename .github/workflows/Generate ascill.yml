@@ -1,50 +1,27 @@
-name: Generate ascill
+name: Exploring events
 
-on: push
+on: workflow_dispatch
 
 jobs:
-  first_job:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-    
-      - name: Download and install cowsay
-        run: sudo apt-get install cowsay -y
+    Docker_details:
+      runs-on: ubuntu-latest
+      steps:
+      - name: docker build
+        run: echo build -t ${{ vars.DOCKER_REGISTRY }}/${{ vars.DOCKER_USERNAME }}/${{ vars.IMAGE_NAME }}
 
-      - name: execu cowsay
-        run: cowsay -f dragon "Hey am dragon" >> dragon.txt
+    Docker_login:
+      runs-on: ubuntu-latest
+      steps:
+      - name: docker login
+        run: echo docker login using --username=${{ vars.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
 
-      - name: uploading dragon file
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-dragon-file
-          path: dragon.txt
-        
-        
-  second_job:
-    needs: first_job
-    runs-on: ubuntu-latest
-    steps:
-      - name: download dragon file
-        uses: actions/download-artifact@v4
-        with:
-          name: my-dragon-file
+    Docker_Deploy:
+       runs-on: ubuntu-latest
+       steps:
+       - name: deploying docker
+         run: echo "deploying into docker world"
+
+
           
-
-      - name: Checking the file exists
-        run: grep -i "dragon" dragon.txt
-        
-  third_job: 
-    needs: second_job
-    runs-on: ubuntu-latest
-    steps:
-      - name: download dragon file
-        uses: actions/download-artifact@v4
-        with:
-          name: my-dragon-file
-
-      - name: viewing the file
-        run: cat dragon.txt      
-        
-
-      
+             
+              
