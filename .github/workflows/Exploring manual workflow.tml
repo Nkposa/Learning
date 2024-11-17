@@ -1,8 +1,7 @@
 name: Exploring events
 
 on:
-  schedule:
-    - cron: "*/1 * * * *"   
+  workflow_dispatch:  
 
 jobs:
     Docker_details:
