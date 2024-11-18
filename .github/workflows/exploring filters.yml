@@ -34,3 +34,6 @@ jobs:
         - name: docker build on ${{ matrix.os }} using ${{ matrix.images}} by naveen
           run: docker run ${{ matrix.images}}
 
+        - name: just testing
+          run: thanks  
+
