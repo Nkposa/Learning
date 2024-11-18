@@ -1,0 +1,17 @@
+name: Matirx strategy
+
+on: workflow_dispatch
+
+jobs:
+    Matrix_job:
+        strategy:
+            matrix:
+                os: [ubuntu;latest, window-latest]
+                images: [hello-world, nginx]
+        runs-on: ${{ matrix.os }} 
+        steps:
+        - name: show docker info
+          run: docker info
+          
+        - name: docker build on ${{ matrix.os }} using ${{ matrix.images}}
+          run: docker run ${{ matrix.images}}
