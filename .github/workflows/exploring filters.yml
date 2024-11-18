@@ -1,7 +1,6 @@
 name: Exploring filters and activities
 
 on:
-  workflow_dispatch:   
   push: 
     branches: 
         - main 
