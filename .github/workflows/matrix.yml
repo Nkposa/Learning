@@ -6,7 +6,7 @@ jobs:
     Matrix_job:
         strategy:
             matrix:
-                os: [ubuntu;latest, window-latest]
+                os: [ubuntu-latest, window-latest]
                 images: [hello-world, nginx]
         runs-on: ${{ matrix.os }} 
         steps:
