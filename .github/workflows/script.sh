@@ -1,5 +1,5 @@
 #!/bin/sh
 sudo apt install cowsay -y
-cowsay -f cat "meow meow" >> cat.txt
-cat cat.txt
+cowsay -f dragon "meow meow" >> dragon.txt
+cat dragon.txt
 ls -ltra
