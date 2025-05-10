@@ -1,0 +1,40 @@
+name: "upload and download artifacts"
+on: push
+
+jobs:
+    Build_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout Repo
+          uses: actions/checkout@v4
+
+        - name: exec script to download and install cowsay
+          run: |
+            chmod +x .github/workflows/script.sh
+            .github/workflows/script.sh
+
+        - name: upload artifacts
+          uses: actions/upload-artifact@v4
+          with:
+            name: dragon-file
+            path: dragon.txt
+
+    Test_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: download artifacts
+          uses: actions/download-artifact@v4
+          with:
+            name: dragon-file       
+            
+        - name: display cowsay
+          run: cat dragon.txt
+          
+    Deploy_job:
+        runs-on: ubunubuntu-latest
+        steps:
+        - name: list files
+          run: ls -ltr
+
+        - name: deploy job
+          run: echo "deploying..."  
