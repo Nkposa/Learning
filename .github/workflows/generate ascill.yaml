@@ -8,19 +8,13 @@ jobs:
         - name: checkout Repo
           uses: actions/checkout@v4
 
-        - name: list all the file using multiline
-          run: |
-             ls -ltra
-             cat README.md
-             
-        - name: Install Cowsay on ubuntu
-          run: sudo apt install cowsay -y
-          
-        - name: generate ascill artwork
-          run: cowsay -f elephant "I am the biggie, go away" >> elephant.txt
-          
-        - name: check the elephant and other files
+        - name: list files
           run: ls -ltra
-          
-        - name: display cowsay
-          run: cat elephant.txt  
+
+        - name: exec script
+          run: |
+            chmod +x script.sh
+            ./script.sh
+
+            
+              
