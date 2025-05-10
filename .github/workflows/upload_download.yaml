@@ -32,7 +32,7 @@ jobs:
           run: cat dragon.txt
           
     Deploy_job:
-        needs: Test_job
+        needs: [Build_job,Test_job]
         runs-on: ubuntu-latest
         steps:
         - name: list files
