@@ -13,3 +13,8 @@ jobs:
           
         - name: where am I
           run: echo "I am at bengalorebas"
+    my_second_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checking the second job
+          run: echo "executing second job"    
