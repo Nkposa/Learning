@@ -1,0 +1,15 @@
+name: "My first workflow"
+on: push
+
+jobs:
+    my_first_job:
+        runs-on: ubuntu-20.04
+        steps:
+        - name: welcome message
+          run: echo "Hi I am Naveen krishna"
+
+        - name: about me
+          run: echo "I am a software engineer"
+          
+        - name: where am I
+          run: echo "I am at bengalore"
