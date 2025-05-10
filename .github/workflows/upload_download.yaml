@@ -33,7 +33,7 @@ jobs:
           
     Deploy_job:
         needs: Test_job
-        runs-on: ubunubuntu-latest
+        runs-on: ubuntu-latest
         steps:
         - name: list files
           run: ls -ltr
