@@ -3,7 +3,7 @@ on: push
 
 jobs:
     my_first_job:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         steps:
         - name: welcome message
           run: echo "Hi I am Naveen krishna"
